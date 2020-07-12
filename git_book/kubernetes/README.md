@@ -1,0 +1,4 @@
+# kubernetes
+
+{% page-ref page="./" %}
+
