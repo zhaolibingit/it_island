@@ -24,41 +24,8 @@ else
 fi
 unset color_prompt force_color_prompt
 
-
 source .bashrc
 ```
 
-{% tabs %}
-{% tab title="" %}
-```
 
-```
-{% endtab %}
-
-{% tab title="YAML" %}
-```yaml
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: traefik-ingress
-  namespace: default
-spec:
-  rules:
-  - host: traefik.nginx.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: my-nginx
-          servicePort: 80
-  - host: traefik.frontend.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: frontend
-          servicePort: 80
-```
-{% endtab %}
-{% endtabs %}
 
