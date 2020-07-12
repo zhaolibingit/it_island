@@ -1,3 +1,6 @@
 {
-    "root": "./git_book"
+    "root": "./git_book",
+　　 "plugins":[
+    　　　　"expandable-chapters"
+    　　]
 }
