@@ -14,7 +14,7 @@ Ingress Controller 实质上可以理解为是个监视器，Ingress Controller 
 
 ### Ingress controller 对比
 
-![](../.gitbook/assets/ingress_controller.jpg)
+![](../../.gitbook/assets/ingress_controller.jpg)
 
 ### Traefik
 
