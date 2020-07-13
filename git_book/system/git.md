@@ -2,9 +2,7 @@
 
 #### 不用重复输入账号密码
 
-```bash
-git config --global credential.helper store
-```
+`git config --global credential.helper store`
 
 #### 实现linux终端显示当前分支
 
