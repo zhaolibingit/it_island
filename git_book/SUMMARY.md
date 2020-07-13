@@ -3,7 +3,7 @@
 * [IT island \(IT军火库\)](README.md)
 * [openstack](openstack.md)
 * [kubernetes](kubernetes/README.md)
-  * [Untitled](kubernetes/untitled-1.md)
+  * [Ingress](kubernetes/untitled-1.md)
   * [Untitled](kubernetes/untitled.md)
 * [istio](istio.md)
 * [bigdata](bigdata.md)
