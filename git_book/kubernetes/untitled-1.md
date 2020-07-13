@@ -1,16 +1,18 @@
 # Ingress
 
-### Ingress 简介
+## Ingress 简介
 
-#### 理解Ingress
+### 理解Ingress
 
 ingress就是从kubernetes集群外访问集群的入口，将用户的URL请求转发到不同的service上。Ingress相当于nginx、apache等负载均衡方向代理服务器，其中还包括规则定义，即URL的路由信息，路由信息得的刷新由[Ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-controllers)来提供。
 
-#### 理解Ingress controller
+### 理解Ingress controller
 
 Ingress Controller 实质上可以理解为是个监视器，Ingress Controller 通过不断地跟 kubernetes API 打交道，实时的感知后端 service、pod 等变化，比如新增和减少 pod，service 增加与减少等；当得到这些变化信息后，Ingress Controller 再结合下文的 Ingress 生成配置，然后更新反向代理负载均衡器，并刷新其配置，达到服务发现的作用。
 
-#### 市面上的Ingress controller 对比
+## Ingress controller 
+
+### Ingress controller 对比
 
 ![](../.gitbook/assets/ingress_controller.jpg)
 
