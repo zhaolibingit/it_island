@@ -1,5 +1,11 @@
 # k8s安装初始化系统
 
+#### 1.完成系统初始化和基本调优
+
+{% page-ref page="../../system/you-hua-jiao-ben/untitled/" %}
+
+#### 2.k8s安装的系统初始化和调优
+
 ```text
 # 关闭swap
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
@@ -47,7 +53,6 @@ EOF
 
 systemctl restart systemd-journald
 
-
 # 关闭NUMA
 cp /etc/default/grub{,.bak} 
 vim /etc/default/grub # 在    GRUB_CMDLINE_LINUX 一行添加    `numa=off` 参数，如下所示： diff /etc/default/grub.bak /etc/default/grub 
@@ -57,9 +62,5 @@ vim /etc/default/grub # 在    GRUB_CMDLINE_LINUX 一行添加    `numa=off` 参
 > GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=centos/root rhgb quiet numa=off" 
 cp /boot/grub2/grub.cfg{,.bak} 
 grub2-mkconfig -o /boot/grub2/grub.cfg
-
-
-
-
 ```
 
