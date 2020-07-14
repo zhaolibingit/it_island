@@ -4,6 +4,7 @@
 * [openstack](openstack.md)
 * [kubernetes](kubernetes/README.md)
   * [install](kubernetes/install/README.md)
+    * [k8s安装初始化系统](kubernetes/install/k8s-an-zhuang-chu-shi-hua-xi-tong.md)
     * [kubeadm](kubernetes/install/kubeadm.md)
   * [Ingress](kubernetes/untitled-1/README.md)
     * [traefik](kubernetes/untitled-1/traefik.md)

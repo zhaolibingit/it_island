@@ -71,10 +71,19 @@ systemctl stop postfix
 systemctl disable postfix
 
 # 安装基本工具包
-yum update
+yum update 
 yum install -y bash-completion  #system自动补全包
 yum install -y vim wget lrzsz lsof net-tools
-yum install -y conntrack ntp ipvsadm ipset jq iptables curl sysstat libseccomp git
+yum install -y conntrack ntp ipvsadm ipset jq telnet iptables curl sysstat libseccomp git
 
+#升级内核
+# 升级内核
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm 
+# 安装完成后检查    /boot/grub2/grub.cfg 中对应内核    menuentry 中是否包含    initrd16 配置，如果没有，再安装 一次！ 
+yum --enablerepo=elrepo-kernel install -y kernel-lt 
+# 设置开机从新内核启动 
+grub2-set-default "CentOS Linux (4.4.229-1.el7.elrepo.x86_64) 7 (Core)" 
+# 重启后安装内核源文件 
+yum --enablerepo=elrepo-kernel install -y kernel-lt-devel-$(uname -r) kernel-lt-headers-$(uname -r)
 ```
 
