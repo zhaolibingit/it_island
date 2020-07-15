@@ -2,7 +2,7 @@
 
 #### 1.完成系统初始化和基本调优
 
-{% embed url="https://app.gitbook.com/@zhaolibin/s/it/system/you-hua-jiao-ben/system\_init" %}
+{% embed url="https://github.com/zhaolibingit/it\_island/blob/master/git\_book/system/you-hua-jiao-ben/system\_init.md" caption="系统基础优化" %}
 
 #### 2.k8s安装的系统初始化和调优
 
