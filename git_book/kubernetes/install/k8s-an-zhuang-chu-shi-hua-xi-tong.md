@@ -1,8 +1,6 @@
 # k8s 系统初始化 基础调优
 
-#### 1.完成系统初始化和基本调优
-
-{% embed url="https://github.com/zhaolibingit/it\_island/blob/master/git\_book/system/you-hua-jiao-ben/system\_init.md" caption="系统基础优化" %}
+#### 1.完成系统初始化和基本调优，参考[ centos7系统初始化](https://it.zhaolibin.com/system/you-hua-jiao-ben/system_init)
 
 #### 2.k8s安装的系统初始化和调优
 
