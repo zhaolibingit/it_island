@@ -32,7 +32,8 @@ cat > /etc/docker/daemon.json <<EOF
 {
     "exec-opts": ["native.cgroupdriver=systemd"],
     "log-driver": "json-file",
-    "log-opts": {"max-size": "100m"}
+    "log-opts": {"max-size": "100m"},
+    "registry-mirrors": ["https://odhacnra.mirror.aliyuncs.com"]
 } 
 EOF
 
