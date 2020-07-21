@@ -345,6 +345,12 @@ kubectl -n cattle-system patch  daemonsets cattle-node-agent --patch '{
 }'
 ```
 
+#### 在/etc/hosts 增加解析
+
+![rancher1](../../.gitbook/assets/rancher1.png)
+
+![rancher2](../../.gitbook/assets/rancher2.png)
+
 参考链接
 
 {% embed url="https://docs.rancher.cn/rancher2x/installation/helm-ha-install/online/tcp-l4/rancher-install.html\#\_2-2-%E4%BD%BF%E7%94%A8%E8%87%AA%E7%AD%BE%E5%90%8Dssl%E8%AF%81%E4%B9%A6-%E5%8F%AF%E9%80%89" %}
