@@ -28,6 +28,8 @@
 * [database](database.md)
 * [python](python.md)
 * [go](go.md)
+* [tools](tools/README.md)
+  * [iterm2 rz与sz的功能](tools/iterm2-rz-yu-sz-de-gong-neng.md)
 * [docker](docker/README.md)
   * [dockerfile 标准](docker/dockerfile-biao-zhun.md)
 
