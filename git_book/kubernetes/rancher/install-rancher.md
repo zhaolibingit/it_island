@@ -284,8 +284,8 @@ server {
     ssl_session_cache   shared:SSL:10m;
     ssl_session_timeout 10m;
 
-    ssl_certificate /data/kubernetes/helm/tls/tls.crt;
-    ssl_certificate_key  /data/kubernetes/helm/tls/tls.key;
+    ssl_certificate /data/kubernetes/tls/tls.crt;
+    ssl_certificate_key  /data/kubernetes/tls/tls.key;
 
     location / {
         proxy_pass https://https_backend_traefik;

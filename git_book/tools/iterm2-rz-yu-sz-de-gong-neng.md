@@ -6,7 +6,6 @@
 
 ```text
 brew install lrzsz
-
 ```
 
 #### 2. 安装执行脚本
