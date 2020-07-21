@@ -16,9 +16,9 @@ NAME                  	CHART VERSION	APP VERSION	DESCRIPTION
 rancher-stable/rancher	2.4.5        	v2.4.5     	Install Rancher Server to manage Kubernetes clu... 
 ```
 
-### 自签证书安装过程
+## 自签证书安装过程
 
-#### 生成自定义证书，本案例使用自定义域名为rancher.sfkj.sit
+### 生成自定义证书，本案例使用自定义域名为rancher.sfkj.sit
 
 {% tabs %}
 {% tab title="shell" %}
@@ -205,7 +205,7 @@ cp ${SSL_DOMAIN}.crt tls.crt
 {% endtab %}
 {% endtabs %}
 
-#### 使用helm安装rancher
+### 使用helm安装rancher
 
 ```text
 # 创建namespace
@@ -218,7 +218,7 @@ kubectl -n cattle-system create secret generic tls-ca --from-file=./cacerts.pem
 helm install rancher  rancher-stable/rancher --namespace cattle-system --set hostname=rancher.sfkj.sit --set ingress.tls.source=secret --set privateCA=true
 ```
 
-#### 查看结果
+### 查看结果
 
 ```text
 [root@k8s-node001 tls]# kubectl get all -n cattle-system
@@ -268,7 +268,7 @@ status:
   loadBalancer: {}
 ```
 
-#### nginx增加如下配置
+### nginx增加如下配置
 
 ```text
 upstream https_backend_traefik {
@@ -298,7 +298,7 @@ server {
 }
 ```
 
-#### 为Agent Pod添加主机别名\(/etc/hosts\)
+### 为Agent Pod添加主机别名\(/etc/hosts\)
 
 如果您没有内部DNS服务器而是通过添加`/etc/hosts`主机别名的方式指定的Rancher Server域名，那么不管通过哪种方式\(自定义、导入、Host驱动等\)创建K8S集群，K8S集群运行起来之后，因为`cattle-cluster-agent Pod`和`cattle-node-agent pod`无法通过DNS记录找到`Rancher Server URL`,最终导致无法通信。
 
@@ -351,9 +351,9 @@ kubectl -n cattle-system patch  daemonsets cattle-node-agent --patch '{
 
 ![rancher2](../../.gitbook/assets/rancher2.png)
 
-参考链接
+### 参考
 
-{% embed url="https://docs.rancher.cn/rancher2x/installation/helm-ha-install/online/tcp-l4/rancher-install.html\#\_2-2-%E4%BD%BF%E7%94%A8%E8%87%AA%E7%AD%BE%E5%90%8Dssl%E8%AF%81%E4%B9%A6-%E5%8F%AF%E9%80%89" %}
+[**Helm 安装rancher**](https://docs.rancher.cn/rancher2x/installation/helm-ha-install/online/tcp-l4/rancher-install.html) ****
 
-
+\*\*\*\*
 
