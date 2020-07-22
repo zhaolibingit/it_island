@@ -1,3 +1,7 @@
 {
-    "title": "it(军火库) it-island  by  赵历斌"
+    "title": "it(军火库) it-island  by  赵历斌",
+    "plugins": [
+        "splitter"
+    ]
+
 }
