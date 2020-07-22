@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    meta.helm.sh/release-name: rancher
+    meta.helm.sh/release-namespace: cattle-system
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  name: rancher
+  namespace: cattle-system
+
+spec:
+  rules:
+  - host: rancher.sfkj.sit
+    http:
+      paths:
+      - backend:
+          serviceName: rancher
+          servicePort: 80
+#        pathType: ImplementationSpecific
+  tls:
+  - secretName: tls-rancher-ingress
+status:
+  loadBalancer: {}
