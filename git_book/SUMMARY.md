@@ -19,6 +19,8 @@
   * [install-istio](istio/install/README.md)
     * [demo](istio/install/demo.md)
     * [install istio-1.6.5](istio/install/install-istio-1.6.5.md)
+  * [流量管理（Traffic management）](istio/traffic-management/README.md)
+    * [inject](istio/traffic-management/inject.md)
 * [bigdata](bigdata.md)
 * [system](system/README.md)
   * [Git](system/git.md)
