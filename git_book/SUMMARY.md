@@ -16,6 +16,7 @@
     * [traefik](kubernetes/ingress/traefik.md)
     * [Nginx Ingress](kubernetes/ingress/nginx-ingress.md)
 * [istio](istio/README.md)
+  * [kiali](istio/kiali.md)
   * [install-istio](istio/install/README.md)
     * [demo](istio/install/demo.md)
     * [install istio-1.6.5](istio/install/install-istio-1.6.5.md)
