@@ -21,7 +21,30 @@ zipkin                      ClusterIP      10.107.241.143   <none>        9411/T
 
 #### 创建ingress yaml
 
+```text
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: istio-kiali-ingress
+  namespace: istio-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: ********
+    http:
+      paths:
+      - path: /kiali
+        backend:
+          serviceName: kiali
+          servicePort: 20001
+  tls:
+  - secretName: smartoffice-pre
+```
 
+#### 然后登录http://\*\*\*\*\*\*/kiali
+
+![](../.gitbook/assets/image%20%281%29.png)
 
 
 
