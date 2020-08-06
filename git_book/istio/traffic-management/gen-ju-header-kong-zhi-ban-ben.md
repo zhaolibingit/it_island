@@ -1,9 +1,15 @@
 # 根据header控制版本
 
+更改istio-ingress外网访问模式改为nodeport
+
+```text
+kubectl patch service istio-ingressgateway -n istio-system -p '{"spec":{"type":"NodePort"}}'
+```
+
 构建两个镜像
 
 {% tabs %}
-{% tab title="First Tab" %}
+{% tab title="nginx-v1.yaml" %}
 ```text
 apiVersion: apps/v1
 kind: Deployment
@@ -49,7 +55,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="nginx-v2.yaml" %}
 ```text
 apiVersion: apps/v1
 kind: Deployment
@@ -111,7 +117,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab title="" %}
+{% tab title="nginx-vs.yaml" %}
 ```
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -132,5 +138,7 @@ spec:
 {% endtab %}
 {% endtabs %}
 
-
+```text
+for i in `seq 1 100000`; do wget -q -O - http://nginx-demo-svc && sleep 1;done
+```
 

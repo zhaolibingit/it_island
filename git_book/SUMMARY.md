@@ -3,6 +3,7 @@
 * [IT island \(IT军火库\)](README.md)
 * [openstack](openstack.md)
 * [kubernetes](kubernetes/README.md)
+  * [dashboard](kubernetes/dashboard.md)
   * [roles](kubernetes/roles.md)
   * [Helm](kubernetes/helm/README.md)
     * [install helm3](kubernetes/helm/install-helm3.md)
