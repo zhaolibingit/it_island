@@ -23,6 +23,7 @@
     * [install istio-1.6.5](istio/install/install-istio-1.6.5.md)
   * [流量管理（Traffic management）](istio/traffic-management/README.md)
     * [inject](istio/traffic-management/inject.md)
+    * [根据header控制版本](istio/traffic-management/gen-ju-header-kong-zhi-ban-ben.md)
 * [bigdata](bigdata.md)
 * [system](system/README.md)
   * [Git](system/git.md)
