@@ -11,10 +11,17 @@ kubectl patch service istio-ingressgateway -n istio-system -p '{"spec":{"type":"
 {% tabs %}
 {% tab title="nginx-v1.yaml" %}
 ```text
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nginx-demo
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: nginx-demo-deployment-v1
+    namespace: default
     labels:
         app: nginx-demo
         version: v1
@@ -30,6 +37,7 @@ spec:
                 app: nginx-demo
                 version: v1
         spec:
+            serviceAccountName: nginx-demo
             containers:
                 - name: nginx
                   image: registry.cn-huhehaote.aliyuncs.com/zlb_dockerhub/nginx:v1
@@ -46,10 +54,11 @@ metadata:
     namespace: default
 spec:
     selector:
+        app: nginx-demo
         version: v1
     type: ClusterIP
     ports:
-        - name: nginx-demo-v1
+        - name: http
           port: 80
           protocol: TCP
 ```
@@ -77,6 +86,7 @@ spec:
                 app: nginx-demo
                 version: v2
         spec:
+            serviceAccountName: nginx-demo
             containers:
                 - name: nginx
                   image: registry.cn-huhehaote.aliyuncs.com/zlb_dockerhub/nginx:v2
@@ -93,31 +103,54 @@ metadata:
     namespace: default
 spec:
     selector:
+        app: nginx-demo
         version: v2
     type: ClusterIP
     ports:
-        - name: nginx-demo-v2
+        - name: http
           port: 80
           protocol: TCP
+```
+{% endtab %}
 
----
+{% tab title="nginx-demo-svc.yaml" %}
+```
 apiVersion: v1
 kind: Service
 metadata:
-    name: nginx-demo-svc
+    name: nginx-demo
     namespace: default
 spec:
     selector:
         app: nginx-demo
     type: ClusterIP
     ports:
-        - name: nginx-demo
+        - name: http
           port: 80
           protocol: TCP
 ```
 {% endtab %}
 
-{% tab title="nginx-vs.yaml" %}
+{% tab title="" %}
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: nginx-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+```
+{% endtab %}
+
+{% tab title="" %}
 ```
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -125,15 +158,20 @@ metadata:
   name: nginx-demo-virtual-svc
 spec:
   hosts:
-  - nginx-demo-vsc
+  - nginx-demo2
+  - "nginx-demo.istio-sfkj.sit"
+
+  gateways:
+  - nginx-gateway
   http:
     - route:
       - destination:
-          host: nginx-demo-svc-v1
-        weight: 10
+          host: nginx-demo-svc-v1.default.svc.cluster.local
+        weight: 30
       - destination:
-          host: nginx-demo-svc-v2
-        weight: 90
+          host: nginx-demo-svc-v2.default.svc.cluster.local
+        weight: 70
+
 ```
 {% endtab %}
 {% endtabs %}
