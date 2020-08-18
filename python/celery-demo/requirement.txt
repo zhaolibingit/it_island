@@ -1,0 +1,2 @@
+celery[redis,yaml]==4.4.7
+eventlet
