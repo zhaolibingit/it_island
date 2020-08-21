@@ -13,6 +13,7 @@
   * [Install-k8s](kubernetes/install/README.md)
     * [k8s 系统初始化 基础调优](kubernetes/install/k8s-init-system.md)
     * [kubeadm安装   kubernetes-1.18.2](kubernetes/install/kubeadm-install-k8s-1.18.2.md)
+    * [ubuntu 16.04 安装](kubernetes/install/ubuntu-16.04-an-zhuang.md)
   * [Ingress](kubernetes/ingress/README.md)
     * [traefik](kubernetes/ingress/traefik.md)
     * [Nginx Ingress](kubernetes/ingress/nginx-ingress.md)

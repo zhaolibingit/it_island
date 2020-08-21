@@ -57,7 +57,7 @@ repo_gpgcheck=0
 gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg 
 http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg 
 EOF
-
+yu
 yum -y install  kubeadm-1.18.2 kubectl-1.18.2 kubelet-1.18.2
 systemctl enable kubelet.service
 ```
