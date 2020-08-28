@@ -264,5 +264,23 @@ Server Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.2", GitCom
 
 至此已完成安装
 
+### 增加新的node
 
+```bash
+kubeadm token create --print-join-command
+# 根据输出增加新的node即可
+# kubeadm join 172.16.10.7:6443 --token 6r5tir.x8d0mtki6slle6vl     --discovery-token-ca-cert-hash sha256:eed7dbd8c13dc8935ebf0d79e62db371d7cf1b6f402adbda5ba67e6e4747c213
+```
+
+### 增加新的master
+
+```bash
+# 在master上生成用于新master加入的证书
+kubeadm init phase upload-certs --experimental-upload-certs
+
+#添加新master，把生成ID加到--experimental-control-plane --certificate-key后。
+kubeadm join 172.31.182.156:8443  --token ortvag.ra0654faci8y8903 \
+  --discovery-token-ca-cert-hash sha256:04755ff1aa88e7db283c85589bee31fabb7d32186612778e53a536a297fc9010 \
+  --experimental-control-plane --certificate-key f8d1c027c01baef6985ddf24266641b7c64f9fd922b15a32fce40b6b4b21e47d
+```
 
