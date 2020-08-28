@@ -31,6 +31,7 @@
     * [安装配置](bigdata/greenplums/an-zhuang-pei-zhi.md)
 * [system](system/README.md)
   * [Git](system/git.md)
+  * [NFS](system/nfs.md)
   * [优化脚本](system/you-hua-jiao-ben/README.md)
     * [centos7 系统初始化](system/you-hua-jiao-ben/system_init.md)
 * [network](network/README.md)
