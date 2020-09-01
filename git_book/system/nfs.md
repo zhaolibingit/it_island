@@ -14,7 +14,7 @@ systemctl enable nfs-kernel-server
 apt-get install -y nfs-common -y 
 mkdir /nfs_data
 mount -t nfs 172.16.10.11:/nfs_data /nfs_data
-mount -t nfs 172.16.10.11:/nfs_data /nfs_data
+
 172.16.10.11:/nfs_data    /nfs_data      nfs        defaults,_rnetdev     0 0
 ```
 
