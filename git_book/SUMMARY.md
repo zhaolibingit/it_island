@@ -46,6 +46,7 @@
 * [python](python.md)
 * [go](go/README.md)
   * [go env 安装配置](go/go-env-an-zhuang-pei-zhi.md)
+  * [基础](go/ji-chu.md)
 * [tools](tools/README.md)
   * [mac 安装工具](tools/mac-an-zhuang-gong-ju.md)
   * [iterm2 rz与sz的功能](tools/iterm2-rz-yu-sz-de-gong-neng.md)
