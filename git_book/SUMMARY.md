@@ -45,6 +45,7 @@
   * [mongodb](database/mongodb.md)
 * [python](python.md)
 * [go](go/README.md)
+  * [go routine & channel](go/go-routine-and-channel.md)
   * [go env 安装配置](go/go-env-an-zhuang-pei-zhi.md)
   * [基础](go/ji-chu.md)
 * [tools](tools/README.md)
