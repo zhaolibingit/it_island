@@ -67,7 +67,23 @@ MPG 模式介绍
 
 ![](../.gitbook/assets/image%20%282%29.png)
 
+### 3.golang CPU 设置
 
+```go
+import (
+	"fmt"
+	"runtime"
+)
+
+func main() {
+	// 获取当前CPU数量
+	cpuNum := runtime.NumCPU()
+	fmt.Printf("CPU mumber is %v", cpuNum)
+
+	//设置golang运行cpu数
+	runtime.GOMAXPROCS(cpuNum - 1)
+}
+```
 
 
 
