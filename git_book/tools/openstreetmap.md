@@ -208,5 +208,9 @@ max_note_request_area: 50
 
 ![](../.gitbook/assets/image%20%289%29.png)
 
+### 数据导入
 
+```text
+docker-compose -f docker/docker-compose.yml exec web osmosis --read-pbf /path/to/file.osm.pbf --write-apidb host="db" database="openstreetmap" user="postgres"  validateSchemaVersion="no"
+```
 
