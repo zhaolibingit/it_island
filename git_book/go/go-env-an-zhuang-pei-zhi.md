@@ -79,6 +79,8 @@ mkdir -p golang.org/x
 cd golang.org/x
 git clone https://github.com/golang/tools.git
 git clone https://github.com/golang/lint.git
+git clone https://github.com/golang/mod.git
+git clone https://github.com/golang/xerrors.git
 
 # 手动安装插件
 cd $GOPATH/src
