@@ -42,6 +42,7 @@
     * [三次握手，四次挥手](network/jichu/san-ci-wo-shou-si-ci-hui-shou.md)
 * [database](database/README.md)
   * [redis](database/redis/README.md)
+    * [redis6.0.8 集群部署](database/redis/redis6.0.8-ji-qun-bu-shu.md)
     * [redis docker-compose部署](database/redis/redis-dockercompose-bu-shu.md)
   * [mysql](database/mysql/README.md)
     * [基本操作](database/mysql/ji-ben-cao-zuo.md)
