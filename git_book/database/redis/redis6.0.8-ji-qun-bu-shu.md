@@ -56,6 +56,39 @@ cp /data/redis/redis-6.0.8/redis.conf /usr/local/redis/bin/
 
 #### 2.配置安装（单机多实例）
 
+复制多分实例并启动
+
+```bash
+ # 拷贝实例
+ cp -r  /usr/local/redis redis-master
+ cp -r redis-master redis-slave1
+ cp -r redis-master redis-slave2
+ 
+ # 修改配置文件并启动 配置文件不同之处如下
+ [root@iZhp396x45gg57dfz66mt6Z redis]# diff redis-master/bin/redis.conf  redis-slave1/bin/redis.conf
+92c92
+< port 6379
+---
+> port 6380
+247c247
+< pidfile ./redis-6379.pid
+---
+> pidfile ./redis-6380.pid
+1861a1862
+> slaveof 127.0.0.1 6379
+
+
+# 分别启动,端口分别为6379，6380，6381
+./redis-master/bin/redis-server ./redis-master/bin/redis.conf
+./redis-slave1/bin/redis-server ./redis-slave1/bin/redis.conf
+./redis-slave2/bin/redis-server ./redis-slave2/bin/redis.conf
+
+# 查看是否启动
+
+```
+
+
+
 
 
 
