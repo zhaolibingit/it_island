@@ -76,7 +76,7 @@ kubeadm completion bash > /etc/bash_completion.d/kubeadm
 
 获取kubeadm默认配置文件,配置文件如kubeadm-config.yaml
 
-`kubeadm config print init-defaults > kubeadm-config.yaml`
+\`\`
 
 修改配置文件并执行以下命令,执行结果如kubeadm-init.log
 
