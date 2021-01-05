@@ -61,5 +61,6 @@
   * [mac 安装工具](tools/mac-an-zhuang-gong-ju.md)
   * [iterm2 rz与sz的功能](tools/iterm2-rz-yu-sz-de-gong-neng.md)
 * [docker](docker/README.md)
+  * [ubuntu安装docker](docker/ubuntu-an-zhuang-docker.md)
   * [dockerfile 标准](docker/dockerfile-biao-zhun.md)
 
