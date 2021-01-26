@@ -31,6 +31,7 @@
     * [根据header控制版本](istio/traffic-management/gen-ju-header-kong-zhi-ban-ben.md)
 * [bigdata](bigdata/README.md)
   * [greenplums](bigdata/greenplums/README.md)
+    * [mirror 增加](bigdata/greenplums/mirror-zeng-jia.md)
     * [内存问题](bigdata/greenplums/nei-cun-wen-ti.md)
     * [安装配置](bigdata/greenplums/an-zhuang-pei-zhi.md)
 * [system](system/README.md)
