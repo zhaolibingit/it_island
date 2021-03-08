@@ -35,6 +35,7 @@
     * [内存问题](bigdata/greenplums/nei-cun-wen-ti.md)
     * [安装配置](bigdata/greenplums/an-zhuang-pei-zhi.md)
 * [system](system/README.md)
+  * [nginx](system/nginx.md)
   * [ssh 配置](system/ssh-pei-zhi.md)
   * [Git](system/git.md)
   * [NFS](system/nfs.md)
