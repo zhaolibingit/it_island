@@ -27,9 +27,10 @@ networks:
        driver: bridge
 services:
   master:
-    image: redis       ## 镜像
+    image: ccr.ccs.tencentyun.com/sfbj/redis:v1.0       ## 镜像
     container_name: redis-master
     command: redis-server --requirepass redis123456
+    restart: unless-stopped
     ports:
       - "16006:6379"
     volumes:
@@ -37,11 +38,12 @@ services:
     networks:
       - iot
   slave1:
-    image: redis                ## 镜像
+    image: ccr.ccs.tencentyun.com/sfbj/redis:v1.0                ## 镜像
     container_name: redis-slave-1
     ports:
       - "6380:6379"           ## 暴露端口
     command: redis-server --slaveof redis-master 6379 --requirepass redis123456 --masterauth redis123456
+    restart: unless-stopped
     depends_on:
       - master
     volumes:
@@ -49,11 +51,12 @@ services:
     networks:
       - iot
   slave2:
-    image: redis                ## 镜像
+    image: ccr.ccs.tencentyun.com/sfbj/redis:v1.0                ## 镜像
     container_name: redis-slave-2
     ports:
       - "6381:6379"           ## 暴露端口
     command: redis-server --slaveof redis-master 6379 --requirepass redis123456 --masterauth redis123456
+    restart: unless-stopped
     depends_on:
       - master
     volumes:
@@ -61,11 +64,14 @@ services:
     networks:
       - iot
   sentinel1:
-    image: redis       ## 镜像
+    image: ccr.ccs.tencentyun.com/sfbj/redis:v1.0       ## 镜像
     container_name: redis-sentinel-1
+    privileged: true
+    user: root
     ports:
       - "16060:6379"
     command: redis-sentinel /usr/local/etc/redis/sentinel.conf
+    restart: unless-stopped
     depends_on:
       - slave1
     volumes:
