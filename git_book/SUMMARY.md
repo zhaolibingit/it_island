@@ -62,6 +62,7 @@
   * [go env 安装配置](go/go-env-an-zhuang-pei-zhi.md)
   * [1、数据类型](go/untitled.md)
 * [tools](tools/README.md)
+  * [git 问题](tools/git-wen-ti.md)
   * [vscode](tools/vscode.md)
   * [OpenStreetMap](tools/openstreetmap.md)
   * [mac 安装工具](tools/mac-an-zhuang-gong-ju.md)
