@@ -41,6 +41,7 @@
   * [Git](system/git.md)
   * [NFS](system/nfs.md)
   * [优化脚本](system/you-hua-jiao-ben/README.md)
+    * [centos8](system/you-hua-jiao-ben/centos8.md)
     * [centos7 系统初始化](system/you-hua-jiao-ben/system_init.md)
 * [network](network/README.md)
   * [基础](network/jichu/README.md)
